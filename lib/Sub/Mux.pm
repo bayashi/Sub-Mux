@@ -63,7 +63,7 @@ sub unshift_subs {
 sub _unshift {
     my ($self, $list, $append) = @_;
 
-    for my $arg (@{$append}) {
+    for my $arg (reverse @{$append}) {
         if (ref $arg eq 'CODE') {
             unshift @{$list}, $arg;
         }
